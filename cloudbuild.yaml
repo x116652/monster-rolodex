@@ -5,7 +5,7 @@ steps:
       [
         "build",
         #"--tag=gcr.io/${_REPO_ID}/${_NAMESPACE}/${_APP_NAME}:${_DOCKER_TAG}",
-        "--tag=asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}:${_DOCKER_TAG}"
+        "--tag=asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}:${_DOCKER_TAG}",
         ".",
       ]
 
