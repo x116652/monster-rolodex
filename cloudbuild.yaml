@@ -2,12 +2,12 @@ steps:
 
   # Install dependencies and build for production
   - name: node:alpine
-   entrypoint: npm
-   args: ["install"]
+    entrypoint: npm
+    args: ["install"]
 
   - name: node:alpine
-   entrypoint: npm
-   args: ["run", "build", "--if-present"]
+    entrypoint: npm
+    args: ["run", "build", "--if-present"]
 
   # Build image
   - name: "gcr.io/cloud-builders/docker"
