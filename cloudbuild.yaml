@@ -15,15 +15,15 @@ steps:
       [
         "build",
         #"--tag=gcr.io/${_REPO_ID}/${_NAMESPACE}/${_APP_NAME}:${_DOCKER_TAG}",
-        "--tag=asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}:${_DOCKER_TAG}",
+        "--tag=${_LOCATION}-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}/${_IMAGE}:${_DOCKER_TAG}",
         ".",
       ]
-  
 
-images: ["asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}"]
+images: ["${_LOCATION}-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}/${_IMAGE}"]
 
 substitutions:
   _DOCKER_TAG: latest
+  _LOCATION: asia-southeast1
   _REPOSITORY: docker-registry
   _PROJECT_ID: infinite-loop-347810
-  _APP_NAME: monster-rolodex
+  _IMAGE: monster-rolodex
