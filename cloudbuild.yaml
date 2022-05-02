@@ -1,4 +1,14 @@
 steps:
+
+  # Install dependencies and build for production
+  - name: node:alpine
+   entrypoint: npm
+   args: ["install"]
+
+  - name: node:alpine
+   entrypoint: npm
+   args: ["run", "build", "--if-present"]
+
   # Build image
   - name: "gcr.io/cloud-builders/docker"
     args:
@@ -8,6 +18,7 @@ steps:
         "--tag=asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}:${_DOCKER_TAG}",
         ".",
       ]
+  
 
 images: ["asia-southeast1-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}"]
 
